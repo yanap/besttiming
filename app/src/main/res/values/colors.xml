@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="TealA100">#A7FFEB</color>
+    <color name="TealA200">#64FFDA</color>
+    <color name="TealA400">#1DE9B6</color>
+    <color name="TealA700">#00BFA5</color>
+    <color name="Teal900">#004D40</color>
+    <color name="Yellow500">#FFEB3B</color>
+    <color name="YellowA700">#FFD600</color>
 </resources>
