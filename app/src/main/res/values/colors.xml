@@ -10,4 +10,8 @@
     <color name="Teal900">#004D40</color>
     <color name="Yellow500">#FFEB3B</color>
     <color name="YellowA700">#FFD600</color>
+    <color name="colorBlack">#1a1a1a</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorGray">#dcdcdc</color>
+    <color name="colorTrans">#00000000</color>
 </resources>
