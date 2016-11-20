@@ -1,5 +1,6 @@
 package com.yanap.besttiming;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -94,12 +95,22 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_good) {
             // Handle the camera action
+            setMood(true);
         } else if (id == R.id.nav_bad) {
-
+            setMood(false);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void setMood(boolean mood) {
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("mood", mood);
+        editor.apply();
+    }
+
 }

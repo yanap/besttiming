@@ -17,6 +17,6 @@ public class CardRecyclerView extends RecyclerView {
 
     public void setRecyclerAdapter(Context context){
         setLayoutManager(new LinearLayoutManager(context));
-        setAdapter(new CardRecyclerAdapter(context,context.getResources().getStringArray(R.array.dummy)));
+        setAdapter(new CardRecyclerAdapter(context,context.getResources().getStringArray(R.array.good)));
     }
 }

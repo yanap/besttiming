@@ -56,4 +56,30 @@
         <item>沖縄県</item>
     </string-array>
 
+    <string-array name="good">
+        <item>倉貫 健太 男</item>
+        <item>風間 辰吾 男</item>
+        <item>北川 絵梨 女</item>
+        <item>加藤 光来 女</item>
+        <item>涼風 美帆 女</item>
+        <item>垣内 涼子 女</item>
+        <item>向井 洋介 男</item>
+        <item>小林 和義 男</item>
+        <item>嘉島 匠 男</item>
+        <item>猪野 トオル 男</item>
+    </string-array>
+
+    <string-array name="bad">
+        <item>若村 真央 女</item>
+        <item>風間 享 男</item>
+        <item>草村 愛梨 女</item>
+        <item>賀来 彩 女</item>
+        <item>渡瀬 直樹 男</item>
+        <item>平 たか子 女</item>
+        <item>倉貫 蓮 男</item>
+        <item>唐沢 保 男</item>
+        <item>嘉島 孝二 男</item>
+        <item>真勝 壮亮 男</item>
+    </string-array>
+
 </resources>

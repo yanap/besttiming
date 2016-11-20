@@ -1,8 +1,8 @@
 package com.yanap.besttiming;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,11 +39,16 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
         } else {
             vh.textView_sub.setText("次:" + list[position]);
         }
+
         vh.imageView.setImageResource(R.mipmap.ic_launcher);
         vh.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, list[position], Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("position", position);
+                context.startActivity(intent);
             }
         });
     }
