@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity
     protected void onResume(){
         super.onResume();
         mToolBar.setTitle("BEST TIMING");
+
+        boolean mood = getMood();
+        Log.d("---", "" + mood);
     }
 
     @Override
@@ -94,11 +98,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_good) {
-            // Handle the camera action
             setMood(true);
         } else if (id == R.id.nav_bad) {
             setMood(false);
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -107,10 +111,14 @@ public class MainActivity extends AppCompatActivity
 
     private void setMood(boolean mood) {
         SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
-
         SharedPreferences.Editor editor = pref.edit();
         editor.putBoolean("mood", mood);
         editor.apply();
+    }
+
+    private boolean getMood() {
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+        return pref.getBoolean("pref", false);
     }
 
 }

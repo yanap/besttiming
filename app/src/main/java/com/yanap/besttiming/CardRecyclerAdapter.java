@@ -2,6 +2,7 @@ package com.yanap.besttiming;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by yanap on 2016/11/19.
@@ -40,7 +43,12 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
             vh.textView_sub.setText("次:" + list[position]);
         }
 
-        vh.imageView.setImageResource(R.mipmap.ic_launcher);
+        boolean mood = getMood();
+        if (mood) {
+            vh.imageView.setImageResource(R.mipmap.ic_launcher);
+        } else {
+            vh.imageView.setImageResource(R.mipmap.ic_mood_bad);
+        }
         vh.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +82,11 @@ public class CardRecyclerAdapter extends RecyclerView.Adapter<CardRecyclerAdapte
             layout = (LinearLayout) v.findViewById(R.id.layout);
             imageView = (ImageView) v.findViewById(R.id.imageView);
         }
+    }
+
+    private boolean getMood() {
+        SharedPreferences pref = context.getSharedPreferences("pref", MODE_PRIVATE);
+        return pref.getBoolean("pref", false);
     }
 
 }
